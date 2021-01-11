@@ -8,12 +8,12 @@ create_bd_port -dir I core_clk_d
 create_bd_port -dir I dac_fifo_bypass
 
 # TX parameters
-set TX_NUM_OF_LANES 8      ; # L
+set TX_NUM_OF_LANES 4      ; # L
 set TX_NUM_OF_CONVERTERS 8 ; # M
 set TX_SAMPLES_PER_FRAME 1 ; # S
 set TX_SAMPLE_WIDTH 16     ; # N/NP
 
-set TX_SAMPLES_PER_CHANNEL 2 ; # L * 32 / (M * N)
+set TX_SAMPLES_PER_CHANNEL 1 ; # L * 32 / (M * N)
 
 # RX parameters
 set RX_NUM_OF_LANES 4      ; # L
@@ -25,17 +25,17 @@ set RX_SAMPLES_PER_CHANNEL 1 ; # L * 32 / (M * N)
 
 # RX Observation parameters
 set OBS_NUM_OF_LANES 4      ; # L
-set OBS_NUM_OF_CONVERTERS 4 ; # M
+set OBS_NUM_OF_CONVERTERS 8 ; # M
 set OBS_SAMPLES_PER_FRAME 1 ; # S
 set OBS_SAMPLE_WIDTH 16     ; # N/NP
 
-set OBS_SAMPLES_PER_CHANNEL 2 ;  # L * 32 / (M * N)
+set OBS_SAMPLES_PER_CHANNEL 1 ;  # L * 32 / (M * N)
 
 source $ad_hdl_dir/library/jesd204/scripts/jesd204.tcl
 
 set dac_fifo_name axi_adrv9009_fmc_tx_fifo
-set dac_data_width 256
-set dac_dma_data_width 256
+set dac_data_width 128
+set dac_dma_data_width 128
 
 ad_dacfifo_create $dac_fifo_name $dac_data_width $dac_dma_data_width $dac_fifo_address_width
 
@@ -65,7 +65,7 @@ ad_ip_parameter axi_adrv9009_fmc_tx_dma CONFIG.CYCLIC 1
 ad_ip_parameter axi_adrv9009_fmc_tx_dma CONFIG.AXI_SLICE_SRC 1
 ad_ip_parameter axi_adrv9009_fmc_tx_dma CONFIG.AXI_SLICE_DEST 1
 ad_ip_parameter axi_adrv9009_fmc_tx_dma CONFIG.DMA_2D_TRANSFER 0
-ad_ip_parameter axi_adrv9009_fmc_tx_dma CONFIG.DMA_DATA_WIDTH_DEST 256
+ad_ip_parameter axi_adrv9009_fmc_tx_dma CONFIG.DMA_DATA_WIDTH_DEST 128
 ad_ip_parameter axi_adrv9009_fmc_tx_dma CONFIG.DMA_DATA_WIDTH_SRC 128
 ad_ip_parameter axi_adrv9009_fmc_tx_dma CONFIG.FIFO_SIZE 32
 ad_ip_parameter axi_adrv9009_fmc_tx_dma CONFIG.MAX_BYTES_PER_BURST 512
@@ -268,3 +268,4 @@ ad_cpu_interrupt ps-10 mb-15 axi_adrv9009_fmc_rx_dma/irq
 ad_cpu_interrupt ps-11 mb-14 axi_adrv9009_fmc_obs_jesd/irq
 ad_cpu_interrupt ps-12 mb-13 axi_adrv9009_fmc_tx_jesd/irq
 ad_cpu_interrupt ps-13 mb-12 axi_adrv9009_fmc_rx_jesd/irq
+
