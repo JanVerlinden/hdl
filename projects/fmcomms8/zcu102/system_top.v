@@ -47,15 +47,15 @@ module system_top (
   input               ref_clk_c_n,
   input               core_clk_c_p,
   input               core_clk_c_n,
-  input       [ 3:0]  rx_data_c_p,
-  input       [ 3:0]  rx_data_c_n,
+  input       [ 1:0]  rx_data_c_p,
+  input       [ 1:0]  rx_data_c_n,
   output      [ 1:0]  tx_data_c_p,
   output      [ 1:0]  tx_data_c_n,
 
   output              rx_sync_c_p,
   output              rx_sync_c_n,
-  output              rx_os_sync_c_p,
-  output              rx_os_sync_c_n,
+  //output              rx_os_sync_c_p,
+  //output              rx_os_sync_c_n,
   input               tx_sync_c_p,
   input               tx_sync_c_n,
   input               tx_sync_c_1_p,
@@ -84,15 +84,15 @@ module system_top (
   input               ref_clk_d_n,
   input               core_clk_d_p,
   input               core_clk_d_n,
-  input       [ 3:0]  rx_data_d_p,
-  input       [ 3:0]  rx_data_d_n,
+  input       [ 1:0]  rx_data_d_p,
+  input       [ 1:0]  rx_data_d_n,
   output      [ 1:0]  tx_data_d_p,
   output      [ 1:0]  tx_data_d_n,
 
   output              rx_sync_d_p,
   output              rx_sync_d_n,
-  output              rx_os_sync_d_p,
-  output              rx_os_sync_d_n,
+  //output              rx_os_sync_d_p,
+  //output              rx_os_sync_d_n,
   input               tx_sync_d_p,
   input               tx_sync_d_n,
   input               tx_sync_d_1_p,
@@ -150,8 +150,8 @@ module system_top (
   wire            sysref_c;
   wire            ref_clk_d;
   wire            core_clk_d;
-  wire            rx_sync_obs;
-  wire            rx_os_sync_d;
+  //wire            rx_sync_obs;
+  //wire            rx_os_sync_d;
   wire            tx_sync_d;
   wire            sysref_d;
   wire            tx_sync;
@@ -282,20 +282,20 @@ module system_top (
     .O (rx_sync_c_p),
     .OB (rx_sync_c_n));
 
-  OBUFDS i_obufds_rx_os_sync_1 (
-    .I (rx_sync_obs),
-    .O (rx_os_sync_c_p),
-    .OB (rx_os_sync_c_n));
+  //OBUFDS i_obufds_rx_os_sync_1 (
+  //  .I (rx_sync_obs),
+  //  .O (rx_os_sync_c_p),
+  //  .OB (rx_os_sync_c_n));
 
   OBUFDS i_obufds_rx_sync_2 (
     .I (rx_sync_rx),
     .O (rx_sync_d_p),
     .OB (rx_sync_d_n));
 
-  OBUFDS i_obufds_rx_os_sync_2 (
-    .I (rx_sync_obs),
-    .O (rx_os_sync_d_p),
-    .OB (rx_os_sync_d_n));
+  //OBUFDS i_obufds_rx_os_sync_2 (
+  //  .I (rx_sync_obs),
+  //  .O (rx_os_sync_d_p),
+  //  .OB (rx_os_sync_d_n));
 
   system_wrapper i_system_wrapper (
     .gpio_i (gpio_i),
@@ -310,22 +310,22 @@ module system_top (
     .rx_data_0_p (rx_data_c_p[0]),
     .rx_data_1_n (rx_data_c_n[1]),
     .rx_data_1_p (rx_data_c_p[1]),
-    .rx_data_2_n (rx_data_c_n[2]),
-    .rx_data_2_p (rx_data_c_p[2]),
-    .rx_data_3_n (rx_data_c_n[3]),
-    .rx_data_3_p (rx_data_c_p[3]),
-    .rx_data_4_n (rx_data_d_n[0]),
-    .rx_data_4_p (rx_data_d_p[0]),
-    .rx_data_5_n (rx_data_d_n[1]),
-    .rx_data_5_p (rx_data_d_p[1]),
-    .rx_data_6_n (rx_data_d_n[2]),
-    .rx_data_6_p (rx_data_d_p[2]),
-    .rx_data_7_n (rx_data_d_n[3]),
-    .rx_data_7_p (rx_data_d_p[3]),
+    //.rx_data_2_n (rx_data_c_n[2]),
+    //.rx_data_2_p (rx_data_c_p[2]),
+    //.rx_data_3_n (rx_data_c_n[3]),
+    //.rx_data_3_p (rx_data_c_p[3]),
+    .rx_data_2_n (rx_data_d_n[0]),
+    .rx_data_2_p (rx_data_d_p[0]),
+    .rx_data_3_n (rx_data_d_n[1]),
+    .rx_data_3_p (rx_data_d_p[1]),
+    //.rx_data_6_n (rx_data_d_n[2]),
+    //.rx_data_6_p (rx_data_d_p[2]),
+    //.rx_data_7_n (rx_data_d_n[3]),
+    //.rx_data_7_p (rx_data_d_p[3]),
     .rx_sync_0 (rx_sync_rx),
-    .rx_sync_4 (rx_sync_obs),
+    //.rx_sync_4 (rx_sync_obs),
     .rx_sysref_0 (sysref_d),
-    .rx_sysref_4 (sysref_c),
+    //.rx_sysref_4 (sysref_c),
     .tx_data_0_n (tx_data_c_n[0]),
     .tx_data_0_p (tx_data_c_p[0]),
     .tx_data_1_n (tx_data_c_n[1]),

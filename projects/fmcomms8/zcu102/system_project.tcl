@@ -4,6 +4,7 @@ source $ad_hdl_dir/projects/scripts/adi_project_xilinx.tcl
 source $ad_hdl_dir/projects/scripts/adi_board.tcl
 
 adi_project fmcomms8_zcu102
+
 adi_project_files  fmcomms8_zcu102 [list \
   "system_top.v" \
   "system_constr.xdc"\

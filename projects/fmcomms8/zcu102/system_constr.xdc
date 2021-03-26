@@ -6,10 +6,10 @@ set_property PACKAGE_PIN H2 [get_ports {rx_data_c_p[0]}]; # C06 FMC_HPC0_DP0_M2C
 set_property PACKAGE_PIN H1 [get_ports {rx_data_c_n[0]}]; # C07 FMC_HPC0_DP0_M2C_N
 set_property PACKAGE_PIN J4 [get_ports {rx_data_c_p[1]}]; # A02 FMC_HPC0_DP1_M2C_P
 set_property PACKAGE_PIN J3 [get_ports {rx_data_c_n[1]}]; # A03 FMC_HPC0_DP1_M2C_N
-set_property PACKAGE_PIN F2 [get_ports {rx_data_c_p[2]}]; # A06 FMC_HPC0_DP2_M2C_P
-set_property PACKAGE_PIN F1 [get_ports {rx_data_c_n[2]}]; # A07 FMC_HPC0_DP2_M2C_N
-set_property PACKAGE_PIN K2 [get_ports {rx_data_c_p[3]}]; # A10 FMC_HPC0_DP3_M2C_P
-set_property PACKAGE_PIN K1 [get_ports {rx_data_c_n[3]}]; # A11 FMC_HPC0_DP3_M2C_N
+#set_property PACKAGE_PIN F2 [get_ports {rx_data_c_p[2]}]; # A06 FMC_HPC0_DP2_M2C_P
+#set_property PACKAGE_PIN F1 [get_ports {rx_data_c_n[2]}]; # A07 FMC_HPC0_DP2_M2C_N
+#set_property PACKAGE_PIN K2 [get_ports {rx_data_c_p[3]}]; # A10 FMC_HPC0_DP3_M2C_P
+#set_property PACKAGE_PIN K1 [get_ports {rx_data_c_n[3]}]; # A11 FMC_HPC0_DP3_M2C_N
 set_property PACKAGE_PIN G4 [get_ports {tx_data_c_p[1]}]; # C02 FMC_HPC0_DP0_C2M_P
 set_property PACKAGE_PIN G3 [get_ports {tx_data_c_n[1]}]; # C03 FMC_HPC0_DP0_C2M_N
 set_property PACKAGE_PIN H6 [get_ports {tx_data_c_p[0]}]; # A22 FMC_HPC0_DP1_C2M_P
@@ -26,10 +26,10 @@ set_property PACKAGE_PIN L4 [get_ports {rx_data_d_p[0]}]; # A14 FMC_HPC0_DP4_M2C
 set_property PACKAGE_PIN L3 [get_ports {rx_data_d_n[0]}]; # A15 FMC_HPC0_DP4_M2C_N
 set_property PACKAGE_PIN P2 [get_ports {rx_data_d_p[1]}]; # A18 FMC_HPC0_DP5_M2C_P
 set_property PACKAGE_PIN P1 [get_ports {rx_data_d_n[1]}]; # A19 FMC_HPC0_DP5_M2C_N
-set_property PACKAGE_PIN T2 [get_ports {rx_data_d_p[2]}]; # B16 FMC_HPC0_DP6_M2C_P
-set_property PACKAGE_PIN T1 [get_ports {rx_data_d_n[2]}]; # B17 FMC_HPC0_DP6_M2C_N
-set_property PACKAGE_PIN M2 [get_ports {rx_data_d_p[3]}]; # B12 FMC_HPC0_DP7_M2C_P
-set_property PACKAGE_PIN M1 [get_ports {rx_data_d_n[3]}]; # B13 FMC_HPC0_DP7_M2C_N
+#set_property PACKAGE_PIN T2 [get_ports {rx_data_d_p[2]}]; # B16 FMC_HPC0_DP6_M2C_P
+#set_property PACKAGE_PIN T1 [get_ports {rx_data_d_n[2]}]; # B17 FMC_HPC0_DP6_M2C_N
+#set_property PACKAGE_PIN M2 [get_ports {rx_data_d_p[3]}]; # B12 FMC_HPC0_DP7_M2C_P
+#set_property PACKAGE_PIN M1 [get_ports {rx_data_d_n[3]}]; # B13 FMC_HPC0_DP7_M2C_N
 set_property PACKAGE_PIN M6 [get_ports {tx_data_d_p[0]}]; # A34 FMC_HPC0_DP4_C2M_P
 set_property PACKAGE_PIN M5 [get_ports {tx_data_d_n[0]}]; # A35 FMC_HPC0_DP4_C2M_N
 set_property PACKAGE_PIN P6 [get_ports {tx_data_d_p[1]}]; # A38 FMC_HPC0_DP5_C2M_P
@@ -46,8 +46,8 @@ set_property -dict {PACKAGE_PIN R8  IOSTANDARD LVDS DIFF_TERM_ADV TERM_100} [get
 
 set_property -dict {PACKAGE_PIN AB6 IOSTANDARD LVDS} [get_ports rx_sync_c_p]; # H16 FMC_HPC0_LA11_P
 set_property -dict {PACKAGE_PIN AB5 IOSTANDARD LVDS} [get_ports rx_sync_c_n]; # H17 FMC_HPC0_LA11_N
-set_property -dict {PACKAGE_PIN W7  IOSTANDARD LVDS} [get_ports rx_os_sync_c_p]; # G15 FMC_HPC0_LA12_P
-set_property -dict {PACKAGE_PIN W6  IOSTANDARD LVDS} [get_ports rx_os_sync_c_n]; # G16 FMC_HPC0_LA12_N
+#set_property -dict {PACKAGE_PIN W7  IOSTANDARD LVDS} [get_ports rx_os_sync_c_p]; # G15 FMC_HPC0_LA12_P
+#set_property -dict {PACKAGE_PIN W6  IOSTANDARD LVDS} [get_ports rx_os_sync_c_n]; # G16 FMC_HPC0_LA12_N
 set_property -dict {PACKAGE_PIN L13 IOSTANDARD LVDS DIFF_TERM_ADV TERM_100} [get_ports tx_sync_c_p]; # H22 FMC_HPC0_LA19_P
 set_property -dict {PACKAGE_PIN K13 IOSTANDARD LVDS DIFF_TERM_ADV TERM_100} [get_ports tx_sync_c_n]; # H23 FMC_HPC0_LA19_N
 set_property -dict {PACKAGE_PIN N13 IOSTANDARD LVDS DIFF_TERM_ADV TERM_100} [get_ports tx_sync_c_1_p]; # G21 FMC_HPC0_LA20_P
@@ -74,8 +74,8 @@ set_property -dict {PACKAGE_PIN U11 IOSTANDARD LVCMOS18} [get_ports adrv9009_gpi
 
 set_property -dict {PACKAGE_PIN Y10  IOSTANDARD LVDS} [get_ports rx_sync_d_p]; # H19 FMC_HPC0_LA15_P
 set_property -dict {PACKAGE_PIN Y9   IOSTANDARD LVDS} [get_ports rx_sync_d_n]; # H20 FMC_HPC0_LA15_N
-set_property -dict {PACKAGE_PIN Y12  IOSTANDARD LVDS} [get_ports rx_os_sync_d_p]; # G18 FMC_HPC0_LA16_P
-set_property -dict {PACKAGE_PIN AA12 IOSTANDARD LVDS} [get_ports rx_os_sync_d_n]; # G19 FMC_HPC0_LA16_N
+#set_property -dict {PACKAGE_PIN Y12  IOSTANDARD LVDS} [get_ports rx_os_sync_d_p]; # G18 FMC_HPC0_LA16_P
+#set_property -dict {PACKAGE_PIN AA12 IOSTANDARD LVDS} [get_ports rx_os_sync_d_n]; # G19 FMC_HPC0_LA16_N
 set_property -dict {PACKAGE_PIN P12  IOSTANDARD LVDS DIFF_TERM_ADV TERM_100} [get_ports tx_sync_d_p]; # H25 FMC_HPC0_LA21_P
 set_property -dict {PACKAGE_PIN N12  IOSTANDARD LVDS DIFF_TERM_ADV TERM_100} [get_ports tx_sync_d_n]; # H26 FMC_HPC0_LA21_N
 set_property -dict {PACKAGE_PIN M15  IOSTANDARD LVDS DIFF_TERM_ADV TERM_100} [get_ports tx_sync_d_1_p]; # G24 FMC_HPC0_LA22_P
